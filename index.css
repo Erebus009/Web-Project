@@ -216,5 +216,9 @@ cursor: pointer;
   }
   .social{
     width: 14%;
+    left: 10px;
+  }
+  .text a {
+    font-size: 2em;
   }
 }
