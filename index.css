@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-/* font-family: 'IBM Plex Serif', serif;
+/* font-family: 'Popppins', serif;
 font-family: 'Open Sans', sans-serif; - Code ref to font family usage */
+
+:root {
+  --back: #3edbdb;
+}
+html{
+  background-color: rgb(255, 255, 255);
+}
 
 
 *{
@@ -27,7 +34,27 @@ li{
   z-index: 2;
   transition: 0.5s;
   
+  
 }
+
+.showAbout {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(122, 117, 117);
+  color: white;
+  z-index: 2;
+  transition: 0.5s;
+  
+  
+}
+
+
 .showcase header{
   position: absolute;
   top: 0;
@@ -49,6 +76,7 @@ cursor: pointer;
 .icon{
   height: 70px;
 }
+
 
 
 
@@ -79,14 +107,17 @@ cursor: pointer;
   top: 0;
   right: 0;
   width: 300px;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   
   
 }
-
+.showAbout.active{
+  right: 300px;
+  transition: 0.5;
+}
 
 .showcase.active{
   right: 300px;
@@ -104,7 +135,7 @@ cursor: pointer;
   line-height: 50px;
 }
 .menu ul li a:hover{
-  color: rgb(32, 196, 218);
+  color: var(--back)
 }
 .showcase video{
   position:absolute;
@@ -115,6 +146,8 @@ cursor: pointer;
   object-fit: cover;
   opacity: 0.8;
   overflow: hidden;
+  z-index: -1;
+  opacity: 0.9;
 }
 
 .overlay{
@@ -125,11 +158,28 @@ cursor: pointer;
   height: 100%;
   background-color: rgb(116, 146, 146);
   mix-blend-mode: overlay;
+  z-index: -2;
+  
   
 
+
 }
+.overlay2{
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(100, 98, 98);
+  mix-blend-mode: overlay;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+
+
 .dev{
-  color: rgb(18, 236, 236);
+  color: var(--back);
   display: inline-block;
 
 }
@@ -147,6 +197,7 @@ cursor: pointer;
 }
 .text h3{
   font-size: 6em;
+  font-weight: 800;
 }
 .text p {
   font-size: 1.3rem;
@@ -166,6 +217,7 @@ cursor: pointer;
   letter-spacing: 2px;
   font-weight: 700;
 }
+
 .text a:hover{
   letter-spacing: 5px;
   text-decoration: none;
@@ -200,7 +252,7 @@ cursor: pointer;
   transform: scale(0.5) translateY(-10px);
 }
 @media only screen and (max-width: 700px)  {
-  .showcase, .showcase header{
+  .showcase, .showcase header, .showAbout{
     padding: 0;
     margin: 0;
     width: 100%;
@@ -217,8 +269,59 @@ cursor: pointer;
   .social{
     width: 14%;
     left: 10px;
+    margin-bottom: 0;
+    
   }
   .text a {
-    font-size: 2em;
+    font-size: 1.5em;
   }
+  .box1{
+    left: 0;
+    position: relative;
+    padding: 0;
+    vertical-align: top;
+    
+
+  }
+}
+.container-about{
+  z-index: 3;
+  color: white;
+  
+}
+
+.box1{
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  z-index: 2;
+  color: white;
+  padding: 0;
+  margin: 0; 
+  vertical-align: top;
+
+  
+  
+  
+  
+  
+
+}
+.container{
+word-wrap: break-word;
+width: 100%;
+opacity: 1;
+display: inline-block;
+box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.aboutp{
+ 
+  font-size: 1em;
+  
+}
+.aboutimg{
+  width: 100px;
+  overflow:hidden;
+  display: flex;
 }
